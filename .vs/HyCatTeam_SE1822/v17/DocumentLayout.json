@@ -1,0 +1,550 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\apiservices\\rentalcontractapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\apiservices\\rentalcontractapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\apiservices\\stationapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\apiservices\\stationapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\apiservices\\authapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\apiservices\\authapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\rentalcontractviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\rentalcontractviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\createrentalcontractreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\createrentalcontractreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\userprofileviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\userprofileviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\apiservices\\vehiclemodelapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\apiservices\\vehiclemodelapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\confirmreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\confirmreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\vehicleviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\vehicleviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\contractactiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\contractactiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\roleviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\roleviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\errormessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\errormessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\vehiclemodelviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\vehiclemodelviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\helpers\\jsonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\helpers\\jsonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\apiservices\\userapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\apiservices\\userapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\stationviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\stationviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\brandviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\brandviewres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mavil_\\AppData\\Local\\Temp\\.vsdbgsrc\\f444486f4074f2bfdf74ec9ede7b96e7d45d000e6a6247c73a6919195a94646b\\Freezable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\userloginreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\userloginreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\helpers\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\helpers\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mavil_\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\loginrespone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\loginrespone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\helpers\\tokenstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\helpers\\tokenstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\models\\tokendata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\models\\tokendata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|d:\\education\\fpt_education\\fptcn5\\prn212\\groupproject\\hycatteam_se1822\\hycatteamwpf\\hycatteamwpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4DB103B8-3900-41CD-BFAB-EDA82C018768}|HyCatTeamWPF\\HyCatTeamWPF.csproj|solutionrelative:hycatteamwpf\\hycatteamwpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateRentalContractReq.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\CreateRentalContractReq.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\CreateRentalContractReq.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\CreateRentalContractReq.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\CreateRentalContractReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T07:37:02.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthApiService.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\AuthApiService.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\ApiServices\\AuthApiService.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\AuthApiService.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\ApiServices\\AuthApiService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:27:57.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Views\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAE8BAAAAAAAAAAArwIcBAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:19:39.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Views\\MainWindow.xaml",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "HyCatTeamWPF\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-05T04:19:39.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StationApiService.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\StationApiService.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\ApiServices\\StationApiService.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\StationApiService.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\ApiServices\\StationApiService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAywB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:12:11.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RentalContractApiService.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\RentalContractApiService.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\ApiServices\\RentalContractApiService.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\RentalContractApiService.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\ApiServices\\RentalContractApiService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwE8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T07:37:23.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RentalContractViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\RentalContractViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\RentalContractViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\RentalContractViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\RentalContractViewRes.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T08:24:24.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserProfileViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\UserProfileViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\UserProfileViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\UserProfileViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\UserProfileViewRes.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:25:31.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RoleViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\RoleViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\RoleViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\RoleViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\RoleViewRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:25:40.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VehicleModelApiService.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\VehicleModelApiService.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\ApiServices\\VehicleModelApiService.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\VehicleModelApiService.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\ApiServices\\VehicleModelApiService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T06:25:00.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VehicleViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\VehicleViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\VehicleViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\VehicleViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\VehicleViewRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T08:36:38.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ConfirmReq.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\ConfirmReq.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\ConfirmReq.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\ConfirmReq.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\ConfirmReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T09:21:21.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ContractActionData.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\ContractActionData.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\ContractActionData.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\ContractActionData.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\ContractActionData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T09:09:56.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Views\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Views\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:22:11.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ErrorMessage.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\ErrorMessage.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\ErrorMessage.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\ErrorMessage.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\ErrorMessage.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwAwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T08:05:20.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VehicleModelViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\VehicleModelViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\VehicleModelViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\VehicleModelViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\VehicleModelViewRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T06:16:51.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "JsonHelper.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Helpers\\JsonHelper.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Helpers\\JsonHelper.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Helpers\\JsonHelper.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Helpers\\JsonHelper.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T08:04:42.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\App.xaml",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\App.xaml",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\App.xaml",
+              "RelativeToolTip": "HyCatTeamWPF\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-05T04:22:00.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\App.xaml.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\App.xaml.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\App.xaml.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:21:59.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BrandViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\BrandViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\BrandViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\BrandViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\BrandViewRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T06:17:14.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserApiService.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\UserApiService.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\ApiServices\\UserApiService.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\ApiServices\\UserApiService.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\ApiServices\\UserApiService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:26:08.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "StationViewRes.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\StationViewRes.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\StationViewRes.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\StationViewRes.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\StationViewRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:11:35.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Freezable.cs",
+              "DocumentMoniker": "C:\\Users\\Mavil_\\AppData\\Local\\Temp\\.vsdbgsrc\\f444486f4074f2bfdf74ec9ede7b96e7d45d000e6a6247c73a6919195a94646b\\Freezable.cs",
+              "ToolTip": "C:\\Users\\Mavil_\\AppData\\Local\\Temp\\.vsdbgsrc\\f444486f4074f2bfdf74ec9ede7b96e7d45d000e6a6247c73a6919195a94646b\\Freezable.cs [Read Only]",
+              "ViewState": "AgIAAOUBAAAAAAAAAAAnwPYBAAAEAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:56:50.464Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ResourcePart.cs",
+              "DocumentMoniker": "C:\\Users\\Mavil_\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs",
+              "ToolTip": "C:\\Users\\Mavil_\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs [Read Only]",
+              "ViewState": "AgIAABYAAAAAAAAAAAAnwCcAAAAEAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:44:28.726Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Views\\LoginWindow.xaml",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Views\\LoginWindow.xaml",
+              "RelativeToolTip": "HyCatTeamWPF\\Views\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-05T04:21:30.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ApiClient.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Helpers\\ApiClient.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Helpers\\ApiClient.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Helpers\\ApiClient.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Helpers\\ApiClient.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvw8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:38:55.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserLoginReq.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\UserLoginReq.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\UserLoginReq.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\UserLoginReq.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\UserLoginReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:28:32.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TokenStorage.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Helpers\\TokenStorage.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Helpers\\TokenStorage.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Helpers\\TokenStorage.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Helpers\\TokenStorage.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAArwDEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:28:20.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TokenData.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\TokenData.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\TokenData.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\TokenData.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\TokenData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:31:30.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LoginRespone.cs",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\LoginRespone.cs",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\Models\\LoginRespone.cs",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\Models\\LoginRespone.cs",
+              "RelativeToolTip": "HyCatTeamWPF\\Models\\LoginRespone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T04:42:54.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "HyCatTeamWPF.csproj",
+              "DocumentMoniker": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\HyCatTeamWPF.csproj",
+              "RelativeDocumentMoniker": "HyCatTeamWPF\\HyCatTeamWPF.csproj",
+              "ToolTip": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\HyCatTeamWPF.csproj",
+              "RelativeToolTip": "HyCatTeamWPF\\HyCatTeamWPF.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-05T04:27:31.639Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
