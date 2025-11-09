@@ -15,6 +15,7 @@ namespace HyCatTeamWPF.Models
         public int Status { get; set; }
         public UserProfileViewRes Customer { get; set; }
         public StationViewRes Station { get; set; }
+        public string Description { get; set; } = null!;
     }
 
 }

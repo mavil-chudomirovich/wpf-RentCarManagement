@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics.Contracts;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using WpfAnimatedGif;
@@ -34,9 +35,10 @@ namespace HyCatTeamWPF
             _contractService = new RentalContractApiService(ApiClient.Client);
             LoadUserHeader();
             LoadStations();
-            
-                
-            
+            sidebarHome.Background = Brushes.Green;
+            contractTitle.Visibility = Visibility.Collapsed;
+            ContractPanel.Visibility = Visibility.Collapsed;
+
         }
 
         // Load stations
@@ -123,7 +125,8 @@ namespace HyCatTeamWPF
                     {
                         await LoadMyContracts();
                     }
-                    else {
+                    else
+                    {
                         await LoadAllContracts();
                     }
                 }
@@ -151,7 +154,8 @@ namespace HyCatTeamWPF
                         RoleBadge.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#10b981"));
                         break;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error loading user profile: {ex.Message}",
                                 "Error",
@@ -197,7 +201,8 @@ namespace HyCatTeamWPF
 
                 //  Render UI
                 RenderVehicleCards(result);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error searching vehicles: {ex.Message}",
                                 "Error",
@@ -385,13 +390,13 @@ namespace HyCatTeamWPF
 
                 //Gọi API
                 await _rentalService.CreateRentalContractAsync(request);
-               await  LoadMyContracts();
+                await LoadMyContracts();
                 MessageBox.Show("Rental contract created successfully!",
                                 "Success",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Information);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error creating rental contract: {ex.Message}",
                                 "Error",
@@ -423,7 +428,7 @@ namespace HyCatTeamWPF
 
                 var stack = new StackPanel();
 
-                string modelName = c.Vehicle == null ? "Unknown Model" : c.Vehicle.Model?.Name;
+                string modelName = c.Vehicle == null ? "Unknown Model" : c.Vehicle.Model?.Name!;
 
                 stack.Children.Add(new TextBlock
                 {
@@ -445,15 +450,113 @@ namespace HyCatTeamWPF
                 stack.Children.Add(new TextBlock
                 {
                     Text = $"license Plate: {licensePlate}",
-                    Foreground = Brushes.Blue,
+                    Foreground = Brushes.Black,
                     Margin = new Thickness(0, 5, 0, 10)
+                });
+                string status = "";
+                switch (c.Status)
+                {
+                    case 0:
+                        {
+                            status = "Request Pending";
+                            break;
+                        }
+                    case 1:
+                        {
+                            status = "Payment Pending";
+                            break;
+                        }
+                    case 2:
+                        {
+                            status = "Active";
+                            break;
+                        }
+                    case 3:
+                        {
+                            status = "Returned";
+                            break;
+                        }
+                    case 4:
+                        {
+                            status = "Complete";
+                            break;
+                        }
+                    case 5:
+                        {
+                            status = "Cancel";
+                            break;
+                        }
+                }
+                var color = Brushes.Red;
+                switch (c.Status)
+                {
+                    case 0:
+                        {
+                            color = Brushes.Yellow;
+                            break;
+                        }
+                    case 1:
+                        {
+                            color = Brushes.Orange;
+                            break;
+                        }
+                    case 2:
+                        {
+                            color = Brushes.Blue;
+                            break;
+                        }
+                    case 3:
+                        {
+                            color = Brushes.Purple;
+                            break;
+                        }
+                    case 4:
+                        {
+                            color = Brushes.Green;
+                            break;
+                        }
+                    case 5:
+                        {
+                            color = Brushes.Red;
+                            break;
+                        }
+                }
+                stack.Children.Add(new TextBlock
+                {
+                    Text = $"Status: {status}",
+                    Foreground = color,
+                    Margin = new Thickness(0, 5, 0, 10),
                 });
                 stack.Children.Add(new TextBlock
                 {
-                    Text = $"Status: {c.Status}",
-                    Foreground = Brushes.Blue,
-                    Margin = new Thickness(0, 5, 0, 0)
+                    Text = $"Description: {c.Description}",
+                    Foreground = Brushes.Black,
+                    Margin = new Thickness(0, 5, 0, 10)
                 });
+
+
+                var btnPanel = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    HorizontalAlignment = HorizontalAlignment.Right
+                };
+
+                // ✅ Accept button
+                var cancelBtn = new Button
+                {
+                    Content = "✖",
+                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#EF4444")),
+                    Style = (Style)FindResource("IconButton"),
+                    Tag = new ContractActionData(c.Id, true)
+                };
+                cancelBtn.Click += CancelContract_Click;
+                if (c.Status != 0 && c.Status != 1)
+                {
+                    cancelBtn.IsEnabled = false;
+                }
+                btnPanel.Children.Add(cancelBtn);
+
+                stack.Children.Add(btnPanel);
 
                 border.Child = stack;
                 ContractPanel.Children.Add(border);
@@ -486,44 +589,180 @@ namespace HyCatTeamWPF
 
 
                 // ==== INFO ====
-                string modelName = c.Vehicle == null ? "Unknown Model" : c.Vehicle.Model?.Name;
+                string modelName = c.Vehicle == null ? "Unknown Model" : c.Vehicle.Model?.Name!;
 
-                stack.Children.Add(new TextBlock
+                // ✅ Model Name (title + value)
+                var modelNameText = new TextBlock();
+                modelNameText.Inlines.Add(new Run("Model: ")
                 {
-                    Text = modelName,
-                    FontWeight = FontWeights.Bold,
-                    FontSize = 15
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
                 });
+                modelNameText.Inlines.Add(new Run(modelName)
+                {
+                    Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
+                    
+                });
+                stack.Children.Add(modelNameText);
 
-                stack.Children.Add(new TextBlock
-                {
-                    Text = $"From: {c.StartDate:dd/MM/yyyy}",
-                    Margin = new Thickness(0, 5, 0, 0)
-                });
 
-                stack.Children.Add(new TextBlock
+                // ✅ From Date
+                var fromText = new TextBlock { Margin = new Thickness(0, 5, 0, 0) };
+                fromText.Inlines.Add(new Run("From: ")
                 {
-                    Text = $"To: {c.EndDate:dd/MM/yyyy}"
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
                 });
+                fromText.Inlines.Add(new Run($"{c.StartDate:dd/MM/yyyy}")
+                {
+                    Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
+                    
+                });
+                stack.Children.Add(fromText);
+
+
+                // ✅ To Date
+                var toText = new TextBlock();
+                toText.Inlines.Add(new Run("To: ")
+                {
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
+                });
+                toText.Inlines.Add(new Run($"{c.EndDate:dd/MM/yyyy}")
+                {
+                    Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
+                    
+                });
+                stack.Children.Add(toText);
+
+
+                // ✅ License Plate
                 var licensePlate = c.Vehicle == null ? "N/A" : c.Vehicle.LicensePlate;
-                stack.Children.Add(new TextBlock
+                var licenseText = new TextBlock { Margin = new Thickness(0, 5, 0, 10) };
+                licenseText.Inlines.Add(new Run("License Plate: ")
                 {
-                    Text = $"license Plate: {licensePlate}",
-                    Foreground = Brushes.Blue,
-                    Margin = new Thickness(0, 5, 0, 10)
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
                 });
-                stack.Children.Add(new TextBlock
+                licenseText.Inlines.Add(new Run(licensePlate)
                 {
-                    Text = $"Status: {c.Status}",
-                    Foreground = Brushes.Blue,
-                    Margin = new Thickness(0, 5, 0, 10)
+                    Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
+                    
                 });
-                stack.Children.Add(new TextBlock
+                stack.Children.Add(licenseText);
+
+                string status = "";
+                switch (c.Status)
                 {
-                    Text = $"Customer Name: {c.Customer.FirstName + " " + c.Customer.LastName}",
-                    Foreground = Brushes.Blue,
-                    Margin = new Thickness(0, 5, 0, 10)
+                    case 0:
+                        {
+                            status = "Request Pending";
+                            break;
+                        }
+                    case 1:
+                        {
+                            status = "Payment Pending";
+                            break;
+                        }
+                    case 2:
+                        {
+                            status = "Active";
+                            break;
+                        }
+                    case 3:
+                        {
+                            status = "Returned";
+                            break;
+                        }
+                    case 4:
+                        {
+                            status = "Complete";
+                            break;
+                        }
+                    case 5:
+                        {
+                            status = "Cancel";
+                            break;
+                        }
+                }
+                var color = Brushes.Red;
+                switch (c.Status)
+                {
+                    case 0:
+                        {
+                            color = Brushes.Yellow;
+                            break;
+                        }
+                    case 1:
+                        {
+                            color = Brushes.Orange;
+                            break;
+                        }
+                    case 2:
+                        {
+                            color = Brushes.Blue;
+                            break;
+                        }
+                    case 3:
+                        {
+                            color = Brushes.Purple;
+                            break;
+                        }
+                    case 4:
+                        {
+                            color = Brushes.Green;
+                            break;
+                        }
+                    case 5:
+                        {
+                            color = Brushes.Red;
+                            break;
+                        }
+                }
+
+                // ✅ Customer Name (Inline)
+                var customerText = new TextBlock { Margin = new Thickness(0, 5, 0, 10) };
+                customerText.Inlines.Add(new Run("Customer Name: ")
+                {
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
                 });
+                customerText.Inlines.Add(new Run($"{c.Customer.FirstName} {c.Customer.LastName}")
+                {
+                    Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
+                    
+                });
+                stack.Children.Add(customerText);
+
+
+                // ✅ Status (Inline) – giữ màu theo logic switch
+                var statusText = new TextBlock { Margin = new Thickness(0, 5, 0, 10) };
+                statusText.Inlines.Add(new Run("Status: ")
+                {
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
+                });
+                statusText.Inlines.Add(new Run(status)
+                {
+                    Foreground = color, // ✅ màu logic khầy chọn
+                    
+                });
+                stack.Children.Add(statusText);
+
+
+                // ✅ Description (Inline)
+                var descText = new TextBlock { Margin = new Thickness(0, 5, 0, 10) };
+                descText.Inlines.Add(new Run("Description: ")
+                {
+                    Foreground = Brushes.Black,
+                    FontWeight = FontWeights.Bold
+                });
+                descText.Inlines.Add(new Run(c.Description)
+                {
+                    Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
+                    
+                });
+                stack.Children.Add(descText);
 
 
                 // ==== ACTION BUTTONS ====
@@ -551,7 +790,7 @@ namespace HyCatTeamWPF
                     Style = (Style)FindResource("IconButton"),
                     Tag = new ContractActionData(c.Id, false)
                 };
-                if(c.Status != 0)
+                if (c.Status != 0)
                 {
                     acceptBtn.IsEnabled = false;
                     rejectBtn.IsEnabled = false;
@@ -579,6 +818,10 @@ namespace HyCatTeamWPF
                     };
                     await _rentalService.ConfirmContractReq(data.ContractId, req);
                     await LoadAllContracts();
+                    MessageBox.Show("Contract accepting successfully.",
+                                    "Success",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
@@ -603,8 +846,13 @@ namespace HyCatTeamWPF
                     };
                     await _rentalService.ConfirmContractReq(data.ContractId, req);
                     await LoadAllContracts();
+                    MessageBox.Show("Contract rejected successfully.",
+                                    "Success",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error rejecting contract: {ex.Message}",
                                 "Error",
@@ -613,5 +861,56 @@ namespace HyCatTeamWPF
             }
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var login = new LoginWindow();
+            login.Show();
+            this.Close();
+        }
+
+        private async void CancelContract_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (sender is Button btn && btn.Tag is ContractActionData data)
+                {
+                    await _rentalService.CancleRentalContract(data.ContractId);
+                    await LoadMyContracts();
+                    MessageBox.Show("Contract cancel successfully.",
+                                    "Success",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error cancel contract: {ex.Message}",
+                                "Error",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            contractTitle.Visibility = Visibility.Collapsed;
+            ContractPanel.Visibility = Visibility.Collapsed;
+            mainBorder.Visibility = Visibility.Visible;
+            VehiclePanel.Visibility = Visibility.Visible;
+            availableVehicles.Visibility = Visibility.Visible;
+            sidebarBooking.Background = null;
+            sidebarHome.Background = Brushes.Green;
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            VehiclePanel.Visibility = Visibility.Collapsed;
+            availableVehicles.Visibility = Visibility.Collapsed;
+            contractTitle.Visibility = Visibility.Visible;
+            ContractPanel.Visibility = Visibility.Visible;
+            sidebarBooking.Background = Brushes.Green;
+            sidebarHome.Background = null;
+            mainBorder.Visibility = Visibility.Collapsed;
+        }
     }
 }

@@ -77,7 +77,23 @@ namespace HyCatTeamWPF.ApiServices
                 //var apiError = await response.Content.ReadAsStringAsync();
                 //throw new Exception(apiError);
                 var apiError = JsonHelper.DeserializeJSON<ErrorMessage>(await result.Content.ReadAsStringAsync());
-                throw new Exception(apiError == null ? "ngu" : apiError.detail);
+                throw new Exception(apiError == null ? "fail to comfirm contract" : apiError.detail);
+            }
+            return result;
+
+        }
+        public async Task<HttpResponseMessage> CancleRentalContract(Guid id)
+        {
+
+            var result = await _client.PutAsync(
+                $"/api/rental-contracts/{id}/cancel", null);
+
+            if (!result.IsSuccessStatusCode)
+            {
+                //var apiError = await response.Content.ReadAsStringAsync();
+                //throw new Exception(apiError);
+                var apiError = JsonHelper.DeserializeJSON<ErrorMessage>(await result.Content.ReadAsStringAsync());
+                throw new Exception(apiError == null ? "fail to cancel contract" : apiError.detail);
             }
             return result;
 

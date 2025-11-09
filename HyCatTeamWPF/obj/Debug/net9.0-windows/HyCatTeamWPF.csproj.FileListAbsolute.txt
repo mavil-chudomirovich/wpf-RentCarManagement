@@ -23,3 +23,4 @@ D:\Education\FPT_EDUCATION\FPTCN5\PRN212\GroupProject\HyCatTeam_SE1822\HyCatTeam
 D:\Education\FPT_EDUCATION\FPTCN5\PRN212\GroupProject\HyCatTeam_SE1822\HyCatTeamWPF\obj\Debug\net9.0-windows\HyCatTeamWPF.csproj.AssemblyReference.cache
 D:\Education\FPT_EDUCATION\FPTCN5\PRN212\GroupProject\HyCatTeam_SE1822\HyCatTeamWPF\obj\Debug\net9.0-windows\HyCatTea.A119507F.Up2Date
 D:\Education\FPT_EDUCATION\FPTCN5\PRN212\GroupProject\HyCatTeam_SE1822\HyCatTeamWPF\bin\Debug\net9.0-windows\Picture\unnamed.gif
+D:\Education\FPT_EDUCATION\FPTCN5\PRN212\GroupProject\HyCatTeam_SE1822\HyCatTeamWPF\obj\Debug\net9.0-windows\HyCatTeamWPF.sourcelink.json

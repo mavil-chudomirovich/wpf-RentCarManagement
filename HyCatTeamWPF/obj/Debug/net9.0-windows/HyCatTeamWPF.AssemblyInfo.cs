@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HyCatTeamWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb5619d0e5f093f61b8d5476379f54785ad01d9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HyCatTeamWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HyCatTeamWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

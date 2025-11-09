@@ -5,209 +5,347 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Background="#f4f6f9">
+
     <Window.Resources>
+
+        <!-- ✅ Icon Button -->
         <Style x:Key="IconButton" TargetType="Button">
             <Setter Property="Width" Value="40"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="BorderThickness" Value="0"/>
         </Style>
+
+        <!-- ✅ Default Rounded Button -->
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="12"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ✅ Sidebar Menu Item -->
+        <Style x:Key="SidebarItem" TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="15 10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#153B2F"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- ✅ Style cho nút chính (Search + Rent Vehicle) -->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Background" Value="#00C63E"/>
+            <!-- màu xanh mặc định -->
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}"
+                        Padding="10 5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Hover sáng hơn -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#06D948"/>
+                            </Trigger>
+
+                            <!-- Bấm (pressed) sẽ tối lại -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#009E34"/>
+                            </Trigger>
+
+                            <!-- Disabled -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="bd" Property="Background" Value="#9ca3af"/>
+                                <Setter Property="Foreground" Value="#e5e7eb"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Greeting -->
-            <RowDefinition Height="Auto"/>
-            <!-- Search Box -->
-            <RowDefinition Height="Auto"/>
-            <!-- Vehicles Label -->
-            <RowDefinition Height="*"/>
-            <!-- Vehicle List -->
-            <RowDefinition Height="Auto"/>
-            <!-- Contracts Label -->
-            <RowDefinition Height="*"/>
-            <!-- Contract List -->
-        </Grid.RowDefinitions>
 
 
-        <!-- ✅ Greeting / User Header -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 0 0 15">
+    <!-- ✅ GRID CHA: Sidebar + Content -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <!-- Avatar -->
-            <Border Width="50" Height="50" CornerRadius="25" Background="#e2e8f0">
-                <Grid>
-                    <Image x:Name="ImgAvatar"
-                           Width="50"
-                           Height="50"
-                           Visibility="Collapsed"
-                           Stretch="UniformToFill"
-                           ClipToBounds="True">
-                        <Image.Clip>
-                            <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
-                        </Image.Clip>
-                    </Image>
 
-                    <TextBlock x:Name="TxtAvatarLetter"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
+        <!-- ✅ SIDEBAR -->
+        <Border Grid.Column="0"
+                Background="#0F172A"
+                BorderBrush="#0A0F1A"
+                BorderThickness="0 0 1 0"
+                Padding="20">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Logo + Menu -->
+                    <RowDefinition Height="*"/>
+                    <!-- Spacer -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Avatar horizontal -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Logout -->
+                </Grid.RowDefinitions>
+
+
+                <!-- ✅ Logo + Menu -->
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="GreenWheel"
                                FontSize="22"
                                FontWeight="Bold"
-                               Foreground="#00C63E"/>
-                </Grid>
-            </Border>
+                               Foreground="#00C63E"
+                               Margin="0 0 0 25"/>
 
-            <!-- Name + Role -->
-            <StackPanel Margin="14 0 0 0">
-                <TextBlock x:Name="TxtFullName"
-                           FontSize="18"
-                           FontWeight="Bold"
-                           Foreground="#111"/>
+                    <Button Style="{StaticResource SidebarItem}" Click="Button_Click_3" x:Name="sidebarHome">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🏠" FontSize="18" Margin="0 0 12 0"/>
+                            <TextBlock Text="Home" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
 
-                <Border x:Name="RoleBadge"
-                        Padding="6 2"
-                        CornerRadius="6"
-                        Background="#00C63E"
-                        HorizontalAlignment="Left">
-                    <TextBlock x:Name="TxtRole"
-                               Foreground="White"
-                               FontSize="13"
-                               FontWeight="SemiBold"/>
-                </Border>
-            </StackPanel>
-        </StackPanel>
-
-
-
-
-        <!-- ✅ Search Bar -->
-        <Border Grid.Row="1"
-                CornerRadius="14"
-                Background="White"
-                Padding="20"
-                Margin="0 0 0 10">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="10"
-                                  ShadowDepth="3"
-                                  Opacity="0.3"
-                                  Color="#33000000"/>
-            </Border.Effect>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-
-                <!-- Station -->
-                <StackPanel Width="200">
-                    <TextBlock Text="Station"
-                               FontWeight="SemiBold"
-                               FontSize="13"
-                               Foreground="#333"/>
-                    <ComboBox x:Name="CboStation"
-                              Height="35"
-                              Margin="0 5 0 0"
-                              Background="#f1f5f9"
-                              BorderBrush="#d1d5db"
-                              DisplayMemberPath="Name"
-                              SelectedValuePath="Id"/>
+                    <Button Style="{StaticResource SidebarItem}" Click="Button_Click_4" x:Name="sidebarBooking">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📄" FontSize="18" Margin="0 0 12 0"/>
+                            <TextBlock Text="Rental Booking" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
 
-                <!-- Start Date -->
-                <StackPanel Width="180" Margin="20 0 0 0">
-                    <TextBlock Text="Start Date"
-                               FontWeight="SemiBold"
-                               FontSize="13"
-                               Foreground="#333"/>
-                    <DatePicker x:Name="DateStart"
-                                Height="35"
-                                Margin="0 5 0 0"
-                                Background="#f1f5f9"
-                                BorderBrush="#d1d5db"/>
+
+                <!-- ✅ Spacer -->
+                <Grid Grid.Row="1"/>
+
+
+                <!-- ✅ Avatar + Name + Role (Horizontal – Facebook style) -->
+                <StackPanel Grid.Row="2"
+                            Margin="0 0 0 20"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+
+                    <!-- Avatar -->
+                    <Border Width="45" Height="45"
+                            CornerRadius="22"
+                            Background="#e2e8f0">
+                        <Grid>
+                            <Image x:Name="ImgAvatar"
+                                   Width="45"
+                                   Height="45"
+                                   Visibility="Collapsed"
+                                   Stretch="UniformToFill"
+                                   ClipToBounds="True">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="22,22" RadiusX="22" RadiusY="22"/>
+                                </Image.Clip>
+                            </Image>
+
+                            <TextBlock x:Name="TxtAvatarLetter"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Foreground="#00C63E"/>
+                        </Grid>
+                    </Border>
+
+
+                    <!-- Info -->
+                    <StackPanel Margin="12 2 0 0">
+
+                        <TextBlock x:Name="TxtFullName"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+
+                        <Border x:Name="RoleBadge"
+                                Background="#3B82F6"
+                                Padding="5 1"
+                                CornerRadius="4"
+                                HorizontalAlignment="Left"
+                                >
+                            <TextBlock x:Name="TxtRole"
+                                       Foreground="White"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"/>
+                        </Border>
+
+                    </StackPanel>
+
                 </StackPanel>
 
-                <!-- End Date -->
-                <StackPanel Width="180" Margin="20 0 0 0">
-                    <TextBlock Text="End Date"
-                               FontWeight="SemiBold"
-                               FontSize="13"
-                               Foreground="#333"/>
-                    <DatePicker x:Name="DateEnd"
-                                Height="35"
-                                Margin="0 5 0 0"
-                                Background="#f1f5f9"
-                                BorderBrush="#d1d5db"/>
-                </StackPanel>
 
-                <!-- Search Button -->
-                <Button Content="Search"
-                        Width="120"
-                        Height="40"
-                        Margin="20 20 0 0"
-                        Background="#00C63E"
-                        Foreground="White"
-                        FontSize="14"
-                        FontWeight="Bold"
+                <!-- ✅ Logout Button -->
+                <Button Grid.Row="3"
+                        Content="Logout"
+                        Style="{StaticResource SidebarItem}"
+                        HorizontalContentAlignment="Center"
+                        Background="#E11D48"
                         BorderThickness="0"
-                        Cursor="Hand"
-                        Click="Button_Click"/>
+                        Margin="0 10 0 0"
+                        Click="Button_Click_2"/>
 
-                <!-- Rent Vehicle Button -->
-                <Button Content="Rent Vehicle"
-                        Width="120"
-                        Height="40"
-                        Margin="20 20 0 0"
-                        Background="#00C63E"
-                        Foreground="White"
-                        FontSize="14"
-                        FontWeight="Bold"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Click="Button_Click_1"/>
-            </StackPanel>
+            </Grid>
         </Border>
 
 
 
 
-        <!-- ✅ Section Title: Available Vehicles -->
-        <TextBlock Grid.Row="2"
-                   Text="Available Vehicles"
-                   Foreground="#111"
-                   FontWeight="Bold"
-                   FontSize="18"
-                   Margin="5 5"/>
+
+        <!-- ✅ MAIN CONTENT (KHÔNG CHỈNH BẤT KỲ DÒNG NÀO) -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
 
+                <!-- ✅ Hidden avatar khu vực content -->
+                <StackPanel Grid.Row="0" Visibility="Collapsed"/>
 
-        <!-- ✅ Vehicle List -->
-        <ScrollViewer Grid.Row="3"
-                      VerticalScrollBarVisibility="Auto"
-                      Margin="0 10 0 20">
-            <WrapPanel x:Name="VehiclePanel"
-                       Orientation="Horizontal"
-                       ItemWidth="280"
-                       ItemHeight="360"
-                       Margin="0 10"/>
-        </ScrollViewer>
 
-        <!-- ✅ Section Title: Rental Contracts -->
-        <TextBlock Grid.Row="4"
-                   x:Name="contractTitle"
-                   Text="Rental Contracts"
-                   Foreground="#111"
-                   FontWeight="Bold"
-                   FontSize="18"
-                   Margin="5 5"/>
+                <!-- ✅ Search bar -->
+                <Border Grid.Row="1"
+                        CornerRadius="14"
+                        Background="White"
+                        Padding="20"
+                        Margin="0 0 0 10"
+                        x:Name="mainBorder">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10"
+                                          ShadowDepth="3"
+                                          Opacity="0.3"
+                                          Color="#33000000"/>
+                    </Border.Effect>
 
-        <!-- ✅ Contract List -->
-        <ScrollViewer Grid.Row="5"
-                      VerticalScrollBarVisibility="Auto"
-                      Margin="0 10 0 0">
-            <StackPanel x:Name="ContractPanel"
-                        Orientation="Vertical"
-                        Margin="0 10"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+
+                        <StackPanel Width="200">
+                            <TextBlock Text="Station" FontWeight="SemiBold" FontSize="13" Foreground="#333"/>
+                            <ComboBox x:Name="CboStation" Height="35" Margin="0 5 0 0" Background="#f1f5f9" BorderBrush="#d1d5db"
+                                      DisplayMemberPath="Name" SelectedValuePath="Id"/>
+                        </StackPanel>
+
+                        <StackPanel Width="180" Margin="20 0 0 0">
+                            <TextBlock Text="Start Date" FontWeight="SemiBold" FontSize="13" Foreground="#333"/>
+                            <DatePicker x:Name="DateStart" Height="35" Margin="0 5 0 0" Background="#f1f5f9" BorderBrush="#d1d5db"/>
+                        </StackPanel>
+
+                        <StackPanel Width="180" Margin="20 0 0 0">
+                            <TextBlock Text="End Date" FontWeight="SemiBold" FontSize="13" Foreground="#333"/>
+                            <DatePicker x:Name="DateEnd" Height="35" Margin="0 5 0 0" Background="#f1f5f9" BorderBrush="#d1d5db"/>
+                        </StackPanel>
+
+                        <Button Content="Search"
+        Style="{StaticResource PrimaryButton}"
+        Margin="20 20 0 0"
+        Click="Button_Click"/>
+
+                        <Button Content="Rent Vehicle"
+        Style="{StaticResource PrimaryButton}"
+        Margin="20 20 0 0"
+        Click="Button_Click_1"/>
+
+
+                    </StackPanel>
+                </Border>
+
+
+                <!-- ✅ Available Vehicles Title -->
+                <TextBlock Grid.Row="2"
+                           Text="Available Vehicles"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="5 10"
+                           x:Name="availableVehicles"/>
+
+
+                <!-- ✅ Vehicles List -->
+                <StackPanel Grid.Row="3">
+                    <WrapPanel x:Name="VehiclePanel"
+                               Orientation="Horizontal"
+                               ItemWidth="280"
+                               ItemHeight="360"
+                               Margin="0 10"/>
+                </StackPanel>
+
+
+                <!-- ✅ Contract Title -->
+                <TextBlock Grid.Row="4"
+                           x:Name="contractTitle"
+                           Text="Rental Bookings"
+                           FontWeight="Bold"
+                           FontSize="18"
+                           Margin="5 20 0 10"/>
+
+
+                <!-- ✅ Contract List -->
+                <StackPanel Grid.Row="5">
+                    <StackPanel x:Name="ContractPanel"
+                                Orientation="Vertical"
+                                Margin="0 10"/>
+                </StackPanel>
+
+            </Grid>
         </ScrollViewer>
 
     </Grid>
