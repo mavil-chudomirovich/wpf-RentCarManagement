@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HyCatTeamWPF.Models
 {
-    public class MyContractViewRes
+    public class RentalContractViewRes
     {
         public Guid Id { get; set; }
         public VehicleViewRes Vehicle { get; set; }
@@ -16,6 +16,9 @@ namespace HyCatTeamWPF.Models
         public UserProfileViewRes Customer { get; set; }
         public StationViewRes Station { get; set; }
         public string Description { get; set; } = null!;
+        public IEnumerable<InvoiceViewRes> Invoices { get; set; }
+        public bool IsSignedByStaff { get; set; }
+        public bool IsSignedByCustomer { get; set; }
     }
 
 }
