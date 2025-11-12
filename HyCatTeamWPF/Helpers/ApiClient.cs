@@ -23,6 +23,7 @@ namespace HyCatTeamWPF.Helpers
 
             Client.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", token.AccessToken);
+            //i write this comment to save my fire
         }
     }
 }
