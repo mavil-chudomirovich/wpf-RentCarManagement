@@ -1,72 +1,330 @@
-﻿<Window x:Class="HyCatTeamWPF.Views.PaymentWindow"
+<Window x:Class="HyCatTeamWPF.Views.PaymentWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HyCatTeamWPF.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        Title="PaymentWindow"
+        Height="450"
+        Width="800"
         Loaded="Window_Loaded"
-        Title="PaymentWindow" Height="450" Width="800">
+        Background="{DynamicResource WindowBackgroundBrush}">
 
     <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#F7F9FC" Offset="0"/>
+            <GradientStop Color="#EEF2F7" Offset="1"/>
+        </LinearGradientBrush>
 
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="Arial" />
-            <Setter Property="FontSize" Value="24" />
-            <Setter Property="Foreground" Value="#FF6B705C" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#10B981"/>
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#2E2F33"/>
+        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#5A6470"/>
+        <SolidColorBrush x:Key="InputBackgroundBrush" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="ReadOnlyInputBackgroundBrush" Color="#F4F6FA"/>
+
+        <Style x:Key="FormLabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,16,12"/>
         </Style>
 
         <Style TargetType="TextBox">
-            <Setter Property="Height" Value="32" />
-            <Setter Property="Background" Value="#FFFFF8EB"/>
-            <Setter Property="Width" Value="300"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+            <Setter Property="MinWidth" Value="220"/>
+            <Setter Property="Background" Value="{StaticResource InputBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="#D5DAE3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+            <Setter Property="materialDesign:HintAssist.IsFloating" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="8">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1.5"/>
+                            </Trigger>
+                            <Trigger Property="IsReadOnly" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource ReadOnlyInputBackgroundBrush}"/>
+                                <Setter Property="Foreground" Value="#7A8594"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
-        <Style TargetType="Button">
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="Background" Value="#FFB28B82" />
-            <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Style x:Key="OverlayReadOnlyTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="SectionHeadingTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+        </Style>
+
+        <Style x:Key="SectionHeadingIconStyle" TargetType="materialDesign:PackIcon">
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="AccentDividerStyle" TargetType="Border">
+            <Setter Property="Height" Value="2"/>
+            <Setter Property="Width" Value="52"/>
+            <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+            <Setter Property="CornerRadius" Value="1"/>
+            <Setter Property="Margin" Value="32,6,0,0"/>
+        </Style>
+
+        <Style x:Key="TotalAmountBoxStyle" TargetType="Border">
+            <Setter Property="Background" Value="#E8FBF3"/>
+            <Setter Property="BorderBrush" Value="#B9F0DB"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="14"/>
+            <Setter Property="Padding" Value="14"/>
+        </Style>
+
+        <Style x:Key="StatusTagStyle" TargetType="Border">
+            <Setter Property="Background" Value="#F1F5F9"/>
+            <Setter Property="BorderBrush" Value="#D5DAE3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="999"/>
+            <Setter Property="Padding" Value="10,6"/>
+        </Style>
+
+        <Style x:Key="PrimaryActionButton" TargetType="Button">
+            <Setter Property="Height" Value="46"/>
+            <Setter Property="MinWidth" Value="150"/>
+            <Setter Property="Padding" Value="28,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp2"/>
+            <Setter Property="materialDesign:RippleAssist.IsCentered" Value="True"/>
+            <Setter Property="materialDesign:RippleAssist.Feedback" Value="#FFFFFFFF"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="999">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#0EA971"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#0C8D5E"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
 
-    <StackPanel>
-        <Label Content="Handover Invoice" FontWeight="Bold"/>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Invoice Id" />
-            <TextBox x:Name="TxtId" IsReadOnly="True"/>
-        </StackPanel>
+    <Grid>
+        <materialDesign:Card Padding="32"
+                             UniformCornerRadius="20"
+                             Background="White"
+                             MaxWidth="860"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             materialDesign:ElevationAssist.Elevation="Dp3">
+            <StackPanel>
+                <DockPanel LastChildFill="False" Margin="0,0,0,28">
+                    <materialDesign:PackIcon Kind="ClipboardTextOutline"
+                                             Width="32"
+                                             Height="32"
+                                             Foreground="{StaticResource AccentBrush}"
+                                             VerticalAlignment="Center"/>
+                    <StackPanel Margin="12,0,0,0">
+                        <TextBlock Text="Payment Invoice"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource PrimaryTextBrush}"/>
+                    
+                    </StackPanel>
+                </DockPanel>
 
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Deposit" />
-            <TextBox x:Name="TxtDeposit" IsReadOnly="True"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="SubTotal" />
-            <TextBox x:Name="TxtSubtotal" IsReadOnly="True"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Tax" />
-            <TextBox x:Name="TxtTax" IsReadOnly="True"/>
-        </StackPanel>
-        <Label Content="Handover Invoice Item" FontStyle="Italic"/>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Invoice Item Subtotal" />
-            <TextBox x:Name="TxtItemSubtotal" IsReadOnly="True"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Total Amount" FontWeight="Bold" />
-            <TextBox x:Name="TxtTotalAmount" IsReadOnly="True"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Invoice Status" FontWeight="Bold" />
-            <TextBox x:Name="TxtStatus" IsReadOnly="True"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Pay Amount" />
-            <TextBox x:Name="TxtPaymount"/>
-        </StackPanel>
+                <StackPanel Margin="0,0,0,10">
+                    <DockPanel>
+                        <materialDesign:PackIcon Kind="FileDocumentOutline"
+                                                 Style="{StaticResource SectionHeadingIconStyle}"/>
+                        <TextBlock Text="HANDOVER INVOICE"
+                                   Style="{StaticResource SectionHeadingTextStyle}"/>
+                    </DockPanel>
+                    <Border Style="{StaticResource AccentDividerStyle}"/>
+                </StackPanel>
 
-        <Button x:Name="BtnPayment" Background="Green" Content="Pay" Click="BtnPayment_Click_1"/>
-    </StackPanel>
+                <Grid Margin="0,8,0,18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Id" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtId" IsReadOnly="True"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Deposit" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="TxtDeposit" IsReadOnly="True"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="SubTotal" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="TxtSubtotal" IsReadOnly="True"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Tax" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="TxtTax" IsReadOnly="True"/>
+                </Grid>
+
+                <StackPanel Margin="0,0,0,10">
+                    <DockPanel>
+                        <materialDesign:PackIcon Kind="CartOutline"
+                                                 Style="{StaticResource SectionHeadingIconStyle}"/>
+                        <TextBlock Text="INVOICE ITEMS"
+                                   Style="{StaticResource SectionHeadingTextStyle}"/>
+                    </DockPanel>
+                    <Border Style="{StaticResource AccentDividerStyle}"/>
+                </StackPanel>
+
+                <Grid Margin="0,8,0,18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Item Subtotal" Style="{StaticResource FormLabelStyle}"/>
+                    <Border Grid.Row="0" Grid.Column="1"
+                            Background="#F8FAFD"
+                            BorderBrush="#E1E6EF"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="6">
+                        <TextBox x:Name="TxtItemSubtotal"
+                                 Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
+                                 IsReadOnly="True"
+                                 Foreground="{StaticResource PrimaryTextBrush}"/>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.ColumnSpan="2"
+                            Background="#FFFFFF"
+                            BorderBrush="#E0E5EE"
+                            BorderThickness="1"
+                            CornerRadius="12"
+                            Padding="16"
+                            Margin="0,10,0,0"
+                            materialDesign:ElevationAssist.Elevation="Dp1">
+                        <TextBlock Text="Invoice line items will be displayed here."
+                                   Foreground="{StaticResource SecondaryTextBrush}"
+                                   FontStyle="Italic"/>
+                    </Border>
+                </Grid>
+
+                <StackPanel Margin="0,0,0,10">
+                    <DockPanel>
+                        <materialDesign:PackIcon Kind="CreditCardOutline"
+                                                 Style="{StaticResource SectionHeadingIconStyle}"/>
+                        <TextBlock Text="PAYMENT &amp; STATUS"
+                                   Style="{StaticResource SectionHeadingTextStyle}"/>
+                    </DockPanel>
+                    <Border Style="{StaticResource AccentDividerStyle}"/>
+                </StackPanel>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="260"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,16,0">
+                        <TextBlock Text="Total Amount" Style="{StaticResource FormLabelStyle}" Margin="0,0,0,6"/>
+                        <Border Style="{StaticResource TotalAmountBoxStyle}">
+                            <TextBox x:Name="TxtTotalAmount"
+                                     Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
+                                     IsReadOnly="True"
+                                     FontSize="18"
+                                     FontWeight="SemiBold"
+                                     Foreground="{StaticResource PrimaryTextBrush}"/>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <TextBlock Text="Invoice Status" Style="{StaticResource FormLabelStyle}" Margin="0,0,0,6"/>
+                        <Border Style="{StaticResource StatusTagStyle}">
+                            <TextBox x:Name="TxtStatus"
+                                     Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
+                                     IsReadOnly="True"
+                                     FontWeight="SemiBold"
+                                     TextAlignment="Center"
+                                     Foreground="{StaticResource SecondaryTextBrush}"/>
+                        </Border>
+                    </StackPanel>
+
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,18,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Pay Amount" Style="{StaticResource FormLabelStyle}"/>
+                        <TextBox Grid.Column="1" x:Name="TxtPaymount"/>
+                    </Grid>
+
+                    <Button Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            x:Name="BtnPayment"
+                            Content="Pay Now"
+                            Click="BtnPayment_Click_1"
+                            Style="{StaticResource PrimaryActionButton}"
+                            Margin="0,18,0,0"/>
+                </Grid>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
 </Window>
