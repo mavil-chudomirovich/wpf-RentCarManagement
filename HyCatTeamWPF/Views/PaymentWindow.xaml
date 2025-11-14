@@ -10,37 +10,38 @@
         Height="808"
         Width="600"
         Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
         Background="{DynamicResource WindowBackgroundBrush}">
 
     <Window.Resources>
         <LinearGradientBrush x:Key="WindowBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#F7F9FC" Offset="0"/>
-            <GradientStop Color="#EEF2F7" Offset="1"/>
+            <GradientStop Color="#F7F9FC" Offset="0" />
+            <GradientStop Color="#EEF2F7" Offset="1" />
         </LinearGradientBrush>
 
-        <SolidColorBrush x:Key="AccentBrush" Color="#10B981"/>
-        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#2E2F33"/>
-        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#5A6470"/>
-        <SolidColorBrush x:Key="InputBackgroundBrush" Color="#FFFFFF"/>
-        <SolidColorBrush x:Key="ReadOnlyInputBackgroundBrush" Color="#F4F6FA"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="#10B981" />
+        <SolidColorBrush x:Key="PrimaryTextBrush" Color="#2E2F33" />
+        <SolidColorBrush x:Key="SecondaryTextBrush" Color="#5A6470" />
+        <SolidColorBrush x:Key="InputBackgroundBrush" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="ReadOnlyInputBackgroundBrush" Color="#F4F6FA" />
 
         <Style x:Key="FormLabelStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,0,16,12"/>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,16,12" />
         </Style>
 
         <Style TargetType="TextBox">
-            <Setter Property="Padding" Value="10,6"/>
-            <Setter Property="Margin" Value="0,0,0,12"/>
-            <Setter Property="MinWidth" Value="220"/>
-            <Setter Property="Background" Value="{StaticResource InputBackgroundBrush}"/>
-            <Setter Property="BorderBrush" Value="#D5DAE3"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
-            <Setter Property="materialDesign:HintAssist.IsFloating" Value="False"/>
+            <Setter Property="Padding" Value="10,6" />
+            <Setter Property="Margin" Value="0,0,0,12" />
+            <Setter Property="MinWidth" Value="220" />
+            <Setter Property="Background" Value="{StaticResource InputBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="#D5DAE3" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="materialDesign:HintAssist.IsFloating" Value="False" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
@@ -49,19 +50,21 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="8">
-                            <ScrollViewer x:Name="PART_ContentHost"/>
+                            <ScrollViewer x:Name="PART_ContentHost" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsKeyboardFocused" Value="True">
-                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
-                                <Setter TargetName="Border" Property="BorderThickness" Value="1.5"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1.5" />
                             </Trigger>
+                            <!--
                             <Trigger Property="IsReadOnly" Value="True">
-                                <Setter TargetName="Border" Property="Background" Value="{StaticResource ReadOnlyInputBackgroundBrush}"/>
-                                <Setter Property="Foreground" Value="#7A8594"/>
-                            </Trigger>
+    <Setter TargetName="Border" Property="Background" Value="{StaticResource ReadOnlyInputBackgroundBrush}" />
+    <Setter Property="Foreground" Value="#7A8594" />
+</Trigger>
+                            -->
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Border" Property="Opacity" Value="0.5"/>
+                                <Setter TargetName="Border" Property="Opacity" Value="0.5" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -70,64 +73,64 @@
         </Style>
 
         <Style x:Key="OverlayReadOnlyTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Margin" Value="0"/>
-            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
         </Style>
 
         <Style x:Key="SectionHeadingTextStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="TextAlignment" Value="Left"/>
-            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="Margin" Value="8,0,0,0" />
         </Style>
 
         <Style x:Key="SectionHeadingIconStyle" TargetType="materialDesign:PackIcon">
-            <Setter Property="Width" Value="22"/>
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="22" />
+            <Setter Property="Height" Value="22" />
+            <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
 
         <Style x:Key="AccentDividerStyle" TargetType="Border">
-            <Setter Property="Height" Value="2"/>
-            <Setter Property="Width" Value="52"/>
-            <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
-            <Setter Property="CornerRadius" Value="1"/>
-            <Setter Property="Margin" Value="32,6,0,0"/>
+            <Setter Property="Height" Value="2" />
+            <Setter Property="Width" Value="52" />
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="CornerRadius" Value="1" />
+            <Setter Property="Margin" Value="32,6,0,0" />
         </Style>
 
         <Style x:Key="TotalAmountBoxStyle" TargetType="Border">
-            <Setter Property="Background" Value="#E8FBF3"/>
-            <Setter Property="BorderBrush" Value="#B9F0DB"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="14"/>
-            <Setter Property="Padding" Value="14"/>
+            <Setter Property="Background" Value="#E8FBF3" />
+            <Setter Property="BorderBrush" Value="#B9F0DB" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="14" />
+            <Setter Property="Padding" Value="14" />
         </Style>
 
         <Style x:Key="StatusTagStyle" TargetType="Border">
-            <Setter Property="BorderBrush" Value="#D5DAE3"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="10"/>
-            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="BorderBrush" Value="#D5DAE3" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="10,6" />
         </Style>
 
         <Style x:Key="PrimaryActionButton" TargetType="Button">
-            <Setter Property="Height" Value="46"/>
-            <Setter Property="MinWidth" Value="150"/>
-            <Setter Property="Padding" Value="28,0"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp2"/>
-            <Setter Property="materialDesign:RippleAssist.IsCentered" Value="True"/>
-            <Setter Property="materialDesign:RippleAssist.Feedback" Value="#FFFFFFFF"/>
+            <Setter Property="Height" Value="46" />
+            <Setter Property="MinWidth" Value="150" />
+            <Setter Property="Padding" Value="28,0" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp2" />
+            <Setter Property="materialDesign:RippleAssist.IsCentered" Value="True" />
+            <Setter Property="materialDesign:RippleAssist.Feedback" Value="#FFFFFFFF" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -136,17 +139,17 @@
                                 CornerRadius="10">
                             <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center"
-                                              Margin="{TemplateBinding Padding}"/>
+                                              Margin="{TemplateBinding Padding}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="Background" Value="#0EA971"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#0EA971" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="ButtonBorder" Property="Background" Value="#0C8D5E"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#0C8D5E" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.5"/>
+                                <Setter TargetName="ButtonBorder" Property="Opacity" Value="0.5" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -168,9 +171,9 @@
                 <!-- 🔥 HEADER WITH CLOSE BUTTON -->
                 <Grid Margin="0,0,0,28">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <materialDesign:PackIcon Grid.Column="0"
@@ -178,7 +181,7 @@
                                              Width="32"
                                              Height="32"
                                              Foreground="{StaticResource AccentBrush}"
-                                             VerticalAlignment="Center"/>
+                                             VerticalAlignment="Center" />
 
                     <TextBlock Grid.Column="1"
                                Text="Payment Invoice"
@@ -186,7 +189,7 @@
                                FontSize="30"
                                FontWeight="Bold"
                                VerticalAlignment="Center"
-                               Foreground="{StaticResource PrimaryTextBrush}"/>
+                               Foreground="{StaticResource PrimaryTextBrush}" />
 
                     <Button Grid.Column="2"
                             Width="32"
@@ -195,66 +198,66 @@
                             BorderThickness="0"
                             Cursor="Hand"
                             ToolTip="Close"
-                            Click="Button_Click"/>
+                            Click="Button_Click" />
                 </Grid>
 
                 <!-- ▼ REMAINING CONTENT (UNCHANGED) -->
                 <StackPanel Margin="0,0,0,10">
                     <DockPanel>
                         <materialDesign:PackIcon Kind="FileDocumentOutline"
-                                                 Style="{StaticResource SectionHeadingIconStyle}"/>
+                                                 Style="{StaticResource SectionHeadingIconStyle}" />
                         <TextBlock Text="HANDOVER INVOICE"
-                                   Style="{StaticResource SectionHeadingTextStyle}"/>
+                                   Style="{StaticResource SectionHeadingTextStyle}" />
                     </DockPanel>
-                    <Border Style="{StaticResource AccentDividerStyle}"/>
+                    <Border Style="{StaticResource AccentDividerStyle}" />
                 </StackPanel>
 
                 <Grid Margin="0,8,0,18">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Id" Style="{StaticResource FormLabelStyle}"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtId" IsReadOnly="True"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Id" Style="{StaticResource FormLabelStyle}" />
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="TxtId" IsReadOnly="True" />
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Deposit" Style="{StaticResource FormLabelStyle}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="TxtDeposit" IsReadOnly="True"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Deposit" Style="{StaticResource FormLabelStyle}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="TxtDeposit" IsReadOnly="True" />
 
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="SubTotal" Style="{StaticResource FormLabelStyle}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="TxtSubtotal" IsReadOnly="True"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="SubTotal" Style="{StaticResource FormLabelStyle}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="TxtSubtotal" IsReadOnly="True" />
 
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Tax" Style="{StaticResource FormLabelStyle}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="TxtTax" IsReadOnly="True"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Tax" Style="{StaticResource FormLabelStyle}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="TxtTax" IsReadOnly="True" />
                 </Grid>
 
                 <StackPanel Margin="0,0,0,10">
                     <DockPanel>
                         <materialDesign:PackIcon Kind="CartOutline"
-                                                 Style="{StaticResource SectionHeadingIconStyle}"/>
+                                                 Style="{StaticResource SectionHeadingIconStyle}" />
                         <TextBlock Text="INVOICE ITEMS"
-                                   Style="{StaticResource SectionHeadingTextStyle}"/>
+                                   Style="{StaticResource SectionHeadingTextStyle}" />
                     </DockPanel>
-                    <Border Style="{StaticResource AccentDividerStyle}"/>
+                    <Border Style="{StaticResource AccentDividerStyle}" />
                 </StackPanel>
 
                 <Grid Margin="0,8,0,18">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Item Subtotal" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Invoice Item Subtotal" Style="{StaticResource FormLabelStyle}" />
                     <Border Grid.Row="0" Grid.Column="1"
                             Background="#F8FAFD"
                             BorderBrush="#E1E6EF"
@@ -264,7 +267,7 @@
                         <TextBox x:Name="TxtItemSubtotal"
                                  Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
                                  IsReadOnly="True"
-                                 Foreground="{StaticResource PrimaryTextBrush}"/>
+                                 Foreground="{StaticResource PrimaryTextBrush}" />
                     </Border>
 
                     <Border Grid.Row="1" Grid.ColumnSpan="2"
@@ -277,62 +280,62 @@
                             materialDesign:ElevationAssist.Elevation="Dp1">
                         <TextBlock Text="Invoice line items will be displayed here."
                                    Foreground="{StaticResource SecondaryTextBrush}"
-                                   FontStyle="Italic"/>
+                                   FontStyle="Italic" />
                     </Border>
                 </Grid>
 
                 <StackPanel Margin="0,0,0,10">
                     <DockPanel>
                         <materialDesign:PackIcon Kind="CreditCardOutline"
-                                                 Style="{StaticResource SectionHeadingIconStyle}"/>
+                                                 Style="{StaticResource SectionHeadingIconStyle}" />
                         <TextBlock Text="PAYMENT &amp; STATUS"
-                                   Style="{StaticResource SectionHeadingTextStyle}"/>
+                                   Style="{StaticResource SectionHeadingTextStyle}" />
                     </DockPanel>
-                    <Border Style="{StaticResource AccentDividerStyle}"/>
+                    <Border Style="{StaticResource AccentDividerStyle}" />
                 </StackPanel>
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="260"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="260" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,16,0">
-                        <TextBlock Text="Total Amount" Style="{StaticResource FormLabelStyle}" Margin="0,0,0,6"/>
+                        <TextBlock Text="Total Amount" Style="{StaticResource FormLabelStyle}" Margin="0,0,0,6" />
                         <Border Style="{StaticResource TotalAmountBoxStyle}">
                             <TextBox x:Name="TxtTotalAmount"
                                      Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
                                      IsReadOnly="True"
                                      FontSize="18"
                                      FontWeight="SemiBold"
-                                     Foreground="{StaticResource PrimaryTextBrush}"/>
+                                     Foreground="{StaticResource PrimaryTextBrush}" />
                         </Border>
                     </StackPanel>
 
                     <StackPanel Grid.Row="0" Grid.Column="1">
-                        <TextBlock Text="Invoice Status" Style="{StaticResource FormLabelStyle}" Margin="0,0,0,6"/>
+                        <TextBlock Text="Invoice Status" Style="{StaticResource FormLabelStyle}" Margin="0,0,0,6" />
                         <Border Style="{StaticResource StatusTagStyle}" x:Name="StatusBorder">
                             <TextBox x:Name="TxtStatus"
-                             Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
-                             IsReadOnly="True"
-                             FontWeight="SemiBold"
-                             TextAlignment="Center"
-                             Foreground="{StaticResource SecondaryTextBrush}"/>
+                                Style="{StaticResource OverlayReadOnlyTextBoxStyle}"
+                                IsReadOnly="True"
+                                FontWeight="SemiBold"
+                                TextAlignment="Center"
+                                Foreground="{StaticResource SecondaryTextBrush}" />
                         </Border>
                     </StackPanel>
 
                     <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,18,0,0">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Pay Amount" Style="{StaticResource FormLabelStyle}"/>
-                        <TextBox Grid.Column="1" x:Name="TxtPaymount"/>
+                        <TextBlock Grid.Column="0" Text="Pay Amount" Style="{StaticResource FormLabelStyle}" />
+                        <TextBox Grid.Column="1" x:Name="TxtPaymount" />
                     </Grid>
 
                     <Button Grid.Row="2"
@@ -341,9 +344,8 @@
                             Content="Pay Now"
                             Click="BtnPayment_Click_1"
                             Style="{StaticResource PrimaryActionButton}"
-                            Margin="0,18,0,0"/>
+                            Margin="0,18,0,0" />
                 </Grid>
-
             </StackPanel>
         </materialDesign:Card>
     </Grid>

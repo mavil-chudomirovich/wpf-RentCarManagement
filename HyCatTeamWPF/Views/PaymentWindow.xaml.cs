@@ -5,7 +5,6 @@ using HyCatTeamWPF.Models;
 using System.Windows;
 using System.Windows.Media;
 
-
 namespace HyCatTeamWPF.Views
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace HyCatTeamWPF.Views
         private Guid _contractId;
         private readonly RentalContractApiService _rentalService;
         private readonly InvoiceApiService _invoiceService;
-        
+
         public PaymentWindow(Guid contractId)
         {
             InitializeComponent();
@@ -39,22 +38,30 @@ namespace HyCatTeamWPF.Views
                     TxtTax.Text = handoverInvoice.Tax.ToString();
                     TxtItemSubtotal.Text = handoverInvoice.InvoiceItems.Sum(ii => ii.SubTotal).ToString();
                     TxtTotalAmount.Text = handoverInvoice.Total.ToString();
-                    switch ((int)handoverInvoice.Status)
+                    TxtStatus.Foreground = Brushes.Black;
+                    switch (handoverInvoice.Status)
                     {
                         case (int)InvoiceStatus.Pending:
                             TxtStatus.Text = "Pending";
+                            TxtStatus.Background = Brushes.Yellow;
                             break;
+
                         case (int)InvoiceStatus.Paid:
                             TxtStatus.Text = "Paid";
+                            TxtStatus.Background = Brushes.Green;
                             break;
+
                         case (int)InvoiceStatus.Cancelled:
                             TxtStatus.Text = "Cancelled";
+                            TxtStatus.Background = Brushes.Red;
                             break;
+
                         default:
                             TxtStatus.Text = "Unknown";
+                            TxtStatus.Background = Brushes.White;
                             break;
                     }
-                    if(handoverInvoice.Status != (int)InvoiceStatus.Pending)
+                    if (handoverInvoice.Status != (int)InvoiceStatus.Pending)
                     {
                         BtnPayment.IsEnabled = false;
                     }
@@ -111,23 +118,27 @@ namespace HyCatTeamWPF.Views
                 TxtTax.Text = handoverInvoice.Tax.ToString();
                 TxtItemSubtotal.Text = handoverInvoice.InvoiceItems.Sum(ii => ii.SubTotal).ToString();
                 TxtTotalAmount.Text = handoverInvoice.Total.ToString();
+                TxtStatus.Foreground = Brushes.Black;
                 switch (handoverInvoice.Status)
                 {
                     case (int)InvoiceStatus.Pending:
                         TxtStatus.Text = "Pending";
                         TxtStatus.Background = Brushes.Yellow;
                         break;
+
                     case (int)InvoiceStatus.Paid:
                         TxtStatus.Text = "Paid";
-                        StatusBorder.Background = Brushes.Green;
+                        TxtStatus.Background = Brushes.Green;
                         break;
+
                     case (int)InvoiceStatus.Cancelled:
                         TxtStatus.Text = "Cancelled";
-                        StatusBorder.Background = Brushes.Red;
+                        TxtStatus.Background = Brushes.Red;
                         break;
+
                     default:
                         TxtStatus.Text = "Unknown";
-                        TxtStatus.Background = Brushes.Black;
+                        TxtStatus.Background = Brushes.White;
                         break;
                 }
                 if (handoverInvoice.Status != (int)InvoiceStatus.Pending)
