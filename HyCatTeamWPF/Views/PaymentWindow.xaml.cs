@@ -30,10 +30,10 @@ namespace HyCatTeamWPF.Views
             {
                 var c = await _rentalService.GetContractById(_contractId);
                 var handoverInvoice = c.Invoices.Where(i => i.Type == (int)InvoiceType.Handover).FirstOrDefault();
-                if (c != null)
+                if (c != null && handoverInvoice != null)
                 {
                     TxtId.Text = handoverInvoice.Id.ToString();
-                    TxtDeposit.Text = handoverInvoice.Deposit.Amount.ToString();
+                    TxtDeposit.Text = handoverInvoice.Deposit?.Amount.ToString() ?? "0";
                     TxtSubtotal.Text = handoverInvoice.Subtotal.ToString();
                     TxtTax.Text = handoverInvoice.Tax.ToString();
                     TxtItemSubtotal.Text = handoverInvoice.InvoiceItems.Sum(ii => ii.SubTotal).ToString();
@@ -48,7 +48,7 @@ namespace HyCatTeamWPF.Views
 
                         case (int)InvoiceStatus.Paid:
                             TxtStatus.Text = "Paid";
-                            TxtStatus.Background = Brushes.Green;
+                            TxtStatus.Background = Brushes.LightGreen;
                             break;
 
                         case (int)InvoiceStatus.Cancelled:
@@ -113,7 +113,7 @@ namespace HyCatTeamWPF.Views
             if (handoverInvoice != null)
             {
                 TxtId.Text = handoverInvoice.Id.ToString();
-                TxtDeposit.Text = handoverInvoice.Deposit.Amount.ToString();
+                TxtDeposit.Text = handoverInvoice.Deposit?.Amount.ToString() ?? "0";
                 TxtSubtotal.Text = handoverInvoice.Subtotal.ToString();
                 TxtTax.Text = handoverInvoice.Tax.ToString();
                 TxtItemSubtotal.Text = handoverInvoice.InvoiceItems.Sum(ii => ii.SubTotal).ToString();
@@ -128,7 +128,7 @@ namespace HyCatTeamWPF.Views
 
                     case (int)InvoiceStatus.Paid:
                         TxtStatus.Text = "Paid";
-                        TxtStatus.Background = Brushes.Green;
+                        TxtStatus.Background = Brushes.LightGreen;
                         break;
 
                     case (int)InvoiceStatus.Cancelled:

@@ -25,6 +25,7 @@ namespace HyCatTeamWPF
         private Guid? _selectedModelId = null;
         private UserProfileViewRes User = null;
         private bool _isSidebarVisible = true;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +34,6 @@ namespace HyCatTeamWPF
             _userService = new UserApiService(ApiClient.Client);
             _vehicleService = new VehicleApiService(ApiClient.Client);
             _rentalService = new RentalContractApiService(ApiClient.Client);
-            
         }
 
         // Load stations
@@ -205,9 +205,9 @@ namespace HyCatTeamWPF
                                 MessageBoxImage.Error);
             }
         }
+
         private void RenderVehicleCards(List<VehicleModelViewRes> vehicles)
         {
-
             VehiclePanel.Children.Clear();
 
             foreach (var v in vehicles)
@@ -399,6 +399,7 @@ namespace HyCatTeamWPF
                                 MessageBoxImage.Error);
             }
         }
+
         private async Task LoadMyContracts()
         {
             var contracts = await _rentalService.GetMyContractsAsync();
@@ -436,10 +437,8 @@ namespace HyCatTeamWPF
                 modelNameText.Inlines.Add(new Run(modelName)
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(modelNameText);
-
 
                 // ✅ From Date
                 var fromText = new TextBlock { Margin = new Thickness(0, 5, 0, 0) };
@@ -451,10 +450,8 @@ namespace HyCatTeamWPF
                 fromText.Inlines.Add(new Run($"{c.StartDate:dd/MM/yyyy}")
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(fromText);
-
 
                 // ✅ To Date
                 var toText = new TextBlock();
@@ -466,7 +463,6 @@ namespace HyCatTeamWPF
                 toText.Inlines.Add(new Run($"{c.EndDate:dd/MM/yyyy}")
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(toText);
                 // ✅ License Plate
@@ -480,7 +476,6 @@ namespace HyCatTeamWPF
                 licenseText.Inlines.Add(new Run(licensePlate)
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(licenseText);
                 string status = "";
@@ -565,7 +560,6 @@ namespace HyCatTeamWPF
                 statusText.Inlines.Add(new Run(status)
                 {
                     Foreground = color, // ✅ màu logic khầy chọn
-
                 });
                 stack.Children.Add(statusText);
 
@@ -578,10 +572,8 @@ namespace HyCatTeamWPF
                 descText.Inlines.Add(new Run(c.Description)
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(descText);
-
 
                 var btnPanel = new StackPanel
                 {
@@ -650,7 +642,6 @@ namespace HyCatTeamWPF
 
                 var stack = new StackPanel();
 
-
                 // ==== INFO ====
                 string modelName = c.Vehicle == null ? "Unknown Model" : c.Vehicle.Model?.Name!;
 
@@ -664,10 +655,8 @@ namespace HyCatTeamWPF
                 modelNameText.Inlines.Add(new Run(modelName)
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(modelNameText);
-
 
                 // ✅ From Date
                 var fromText = new TextBlock { Margin = new Thickness(0, 5, 0, 0) };
@@ -679,10 +668,8 @@ namespace HyCatTeamWPF
                 fromText.Inlines.Add(new Run($"{c.StartDate:dd/MM/yyyy}")
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(fromText);
-
 
                 // ✅ To Date
                 var toText = new TextBlock();
@@ -694,10 +681,8 @@ namespace HyCatTeamWPF
                 toText.Inlines.Add(new Run($"{c.EndDate:dd/MM/yyyy}")
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(toText);
-
 
                 // ✅ License Plate
                 var licensePlate = c.Vehicle == null ? "N/A" : c.Vehicle.LicensePlate;
@@ -710,7 +695,6 @@ namespace HyCatTeamWPF
                 licenseText.Inlines.Add(new Run(licensePlate)
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(licenseText);
 
@@ -797,10 +781,8 @@ namespace HyCatTeamWPF
                 customerText.Inlines.Add(new Run($"{c.Customer.FirstName} {c.Customer.LastName}")
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(customerText);
-
 
                 // ✅ Status (Inline) – giữ màu theo logic switch
                 var statusText = new TextBlock { Margin = new Thickness(0, 5, 0, 10) };
@@ -812,10 +794,8 @@ namespace HyCatTeamWPF
                 statusText.Inlines.Add(new Run(status)
                 {
                     Foreground = color, // ✅ màu logic khầy chọn
-
                 });
                 stack.Children.Add(statusText);
-
 
                 // ✅ Description (Inline)
                 var descText = new TextBlock { Margin = new Thickness(0, 5, 0, 10) };
@@ -827,7 +807,6 @@ namespace HyCatTeamWPF
                 descText.Inlines.Add(new Run(c.Description)
                 {
                     Foreground = (Brush)new BrushConverter().ConvertFrom("#000000"),
-
                 });
                 stack.Children.Add(descText);
 
@@ -855,7 +834,6 @@ namespace HyCatTeamWPF
                 customerSignPanel.Children.Add(customerSignLabel);
 
                 stack.Children.Add(customerSignPanel);
-
 
                 // === STAFF SIGN CHECKBOX ===
                 var staffSignPanel = new StackPanel
@@ -966,6 +944,7 @@ namespace HyCatTeamWPF
                 ContractPanel.Children.Add(border);
             }
         }
+
         private async void AcceptContract_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -1081,7 +1060,6 @@ namespace HyCatTeamWPF
             {
                 if (sender is Button btn && btn.Tag is ContractActionData data)
                 {
-
                     bool staffSign = data.StaffSignCheckbox?.IsChecked ?? false;
                     if (!staffSign)
                     {
@@ -1138,6 +1116,7 @@ namespace HyCatTeamWPF
                                 MessageBoxImage.Error);
             }
         }
+
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             contractTitle.Visibility = Visibility.Collapsed;
@@ -1243,7 +1222,7 @@ namespace HyCatTeamWPF
             ContractPanel.Visibility = Visibility.Collapsed;
             BtnReload.Visibility = Visibility.Collapsed;
             CboStation.SelectedIndex = 1;
-            DateStart.SelectedDate = DateTime.Now ;
+            DateStart.SelectedDate = DateTime.Now;
             DateEnd.SelectedDate = DateTime.Now.AddDays(1);
             Guid stationId = (Guid)CboStation.SelectedValue;
 
@@ -1254,7 +1233,6 @@ namespace HyCatTeamWPF
 
             //Render UI
             RenderVehicleCards(result);
-
         }
     }
 }
