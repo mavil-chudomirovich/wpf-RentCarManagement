@@ -353,23 +353,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\patmy\\.nuget\\packages\\": {},
+    "C:\\Users\\Mavil_\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\patmy\\OneDrive\\Documents\\PRN212\\wpf-RentCarManagement\\HyCatTeamWPF\\HyCatTeamWPF.csproj",
+      "projectUniqueName": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\HyCatTeamWPF.csproj",
       "projectName": "HyCatTeamWPF",
-      "projectPath": "C:\\Users\\patmy\\OneDrive\\Documents\\PRN212\\wpf-RentCarManagement\\HyCatTeamWPF\\HyCatTeamWPF.csproj",
-      "packagesPath": "C:\\Users\\patmy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\patmy\\OneDrive\\Documents\\PRN212\\wpf-RentCarManagement\\HyCatTeamWPF\\obj\\",
+      "projectPath": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\HyCatTeamWPF.csproj",
+      "packagesPath": "C:\\Users\\Mavil_\\.nuget\\packages\\",
+      "outputPath": "D:\\Education\\FPT_EDUCATION\\FPTCN5\\PRN212\\GroupProject\\HyCatTeam_SE1822\\HyCatTeamWPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\patmy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mavil_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -378,6 +378,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

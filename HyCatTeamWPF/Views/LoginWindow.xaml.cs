@@ -62,5 +62,17 @@ namespace HyCatTeamWPF
             main.Show();
             this.Close();
         }
+        private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ButtonState == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void CloseApp_Click(object sender, RoutedEventArgs e) => Close();
+        private void MinimizeApp_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+        private void MaximizeApp_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+        }
     }
 }

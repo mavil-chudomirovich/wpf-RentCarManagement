@@ -3,6 +3,7 @@ using HyCatTeamWPF.Constant;
 using HyCatTeamWPF.Helpers;
 using HyCatTeamWPF.Models;
 using System.Windows;
+using System.Windows.Media;
 
 
 namespace HyCatTeamWPF.Views
@@ -114,15 +115,19 @@ namespace HyCatTeamWPF.Views
                 {
                     case (int)InvoiceStatus.Pending:
                         TxtStatus.Text = "Pending";
+                        TxtStatus.Background = Brushes.Yellow;
                         break;
                     case (int)InvoiceStatus.Paid:
                         TxtStatus.Text = "Paid";
+                        StatusBorder.Background = Brushes.Green;
                         break;
                     case (int)InvoiceStatus.Cancelled:
                         TxtStatus.Text = "Cancelled";
+                        StatusBorder.Background = Brushes.Red;
                         break;
                     default:
                         TxtStatus.Text = "Unknown";
+                        TxtStatus.Background = Brushes.Black;
                         break;
                 }
                 if (handoverInvoice.Status != (int)InvoiceStatus.Pending)
@@ -130,6 +135,11 @@ namespace HyCatTeamWPF.Views
                     BtnPayment.IsEnabled = false;
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

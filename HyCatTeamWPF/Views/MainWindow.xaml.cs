@@ -24,7 +24,7 @@ namespace HyCatTeamWPF
         private readonly RentalContractApiService _rentalService;
         private Guid? _selectedModelId = null;
         private UserProfileViewRes User = null;
-
+        private bool _isSidebarVisible = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,16 +33,11 @@ namespace HyCatTeamWPF
             _userService = new UserApiService(ApiClient.Client);
             _vehicleService = new VehicleApiService(ApiClient.Client);
             _rentalService = new RentalContractApiService(ApiClient.Client);
-            LoadUserHeader();
-            LoadStations();
-            sidebarHome.Background = Brushes.Green;
-            contractTitle.Visibility = Visibility.Collapsed;
-            ContractPanel.Visibility = Visibility.Collapsed;
-            BtnReload.Visibility = Visibility.Collapsed;
+            
         }
 
         // Load stations
-        private async void LoadStations()
+        private async Task LoadStations()
         {
             var stations = await _stationService.GetAllStationsAsync();
 
@@ -951,10 +946,10 @@ namespace HyCatTeamWPF
                 btnPanel.Children.Add(rejectBtn);
                 btnPanel.Children.Add(paymentBtn);
                 btnPanel.Children.Add(handoverBtn);
-
-                if (c.Status != (int)RentalContractStatus.PaymentPending)
+                paymentBtn.Visibility = Visibility.Collapsed;
+                if (c.Status != (int)RentalContractStatus.RequestPeding)
                 {
-                    paymentBtn.Visibility = Visibility.Collapsed;
+                    paymentBtn.Visibility = Visibility.Visible;
                 }
                 if (c.Status != (int)RentalContractStatus.RequestPeding)
                 {
@@ -1151,6 +1146,7 @@ namespace HyCatTeamWPF
             VehiclePanel.Visibility = Visibility.Visible;
             availableVehicles.Visibility = Visibility.Visible;
             sidebarBooking.Background = null;
+            TxtWindowTitle.Text = "Vehicle Search";
             sidebarHome.Background = Brushes.Green;
             BtnReload.Visibility = Visibility.Collapsed;
         }
@@ -1177,6 +1173,88 @@ namespace HyCatTeamWPF
             {
                 await LoadMyContracts();
             }
+        }
+
+        private void CloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MinimizeApp_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void MaximizeApp_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState == WindowState.Maximized
+                ? WindowState.Normal
+                : WindowState.Maximized;
+        }
+
+        private void SidebarHome_Click(object sender, RoutedEventArgs e)
+        {
+            sidebarHome.IsChecked = true;
+            sidebarBooking.IsChecked = false;
+
+            mainBorder.Visibility = Visibility.Visible;
+            VehiclePanel.Visibility = Visibility.Visible;
+            availableVehicles.Visibility = Visibility.Visible;
+
+            contractTitle.Visibility = Visibility.Collapsed;
+            ContractPanel.Visibility = Visibility.Collapsed;
+            BtnReload.Visibility = Visibility.Collapsed;
+        }
+
+        private void SidebarBooking_Click(object sender, RoutedEventArgs e)
+        {
+            sidebarHome.IsChecked = false;
+            sidebarBooking.IsChecked = true;
+
+            mainBorder.Visibility = Visibility.Collapsed;
+            VehiclePanel.Visibility = Visibility.Collapsed;
+            availableVehicles.Visibility = Visibility.Collapsed;
+
+            contractTitle.Visibility = Visibility.Visible;
+            ContractPanel.Visibility = Visibility.Visible;
+            BtnReload.Visibility = Visibility.Visible;
+        }
+
+        private void BtnToggleSidebar_Click(object sender, RoutedEventArgs e)
+        {
+            if (_isSidebarVisible)
+            {
+                SidebarColumn.Width = new GridLength(0);
+                _isSidebarVisible = false;
+            }
+            else
+            {
+                SidebarColumn.Width = GridLength.Auto;
+                _isSidebarVisible = true;
+            }
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadUserHeader();
+            await LoadStations();
+            TxtWindowTitle.Text = "Rent A Car And Go Everywhere";
+            contractTitle.Visibility = Visibility.Collapsed;
+            ContractPanel.Visibility = Visibility.Collapsed;
+            BtnReload.Visibility = Visibility.Collapsed;
+            CboStation.SelectedIndex = 1;
+            DateStart.SelectedDate = DateTime.Now ;
+            DateEnd.SelectedDate = DateTime.Now.AddDays(1);
+            Guid stationId = (Guid)CboStation.SelectedValue;
+
+            DateTimeOffset start = DateStart.SelectedDate.Value;
+            DateTimeOffset end = DateEnd.SelectedDate.Value;
+
+            var result = await _vehicleService.SearchVehiclesAsync(stationId, start, end);
+
+            //Render UI
+            RenderVehicleCards(result);
+
         }
     }
 }
